@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li><a href="">1</a></li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+ 	
+
+	<script type="text/javascript" src="../../lib/common.js"></script>
+	<script>
+		$(function(){
+			// $('ul li').click(function(e){
+			// 	//  e.target  		  返回当前点击对象及子对象
+			// 	//  e.currentTanget   返回当前点击对象
+			// 	var $cur = $(e.currentTarget);
+			// 	//css函数的用法	
+			// 	//1> $cur.css('key','value');
+			// 	//2> $cur.css({"key":"value"});
+			// 	$cur.css('color','red');
+			// 	$cur.css({'color':'green','background-color':'gray'})
+			// 	//html()获取当前节点里面全部,包括子节点的标签,
+			// 	//text()获取当前节点文本,不包括标签
+			// 	console.log($cur.html());
+			// 	console.log($cur.text());
+
+
+			// })
+			//bind() delegate()
+
+			//动态绑定事件
+			//绑定在父级节点ul上,通过冒泡查找执行
+			$('ul').append('<li>4</li>')
+			$('ul').on('click','li',function(e){
+				var $cur = $(e.currentTarget);
+				$cur.css({'color':'green','background-color':'gray'})
+			});
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{background-color: red;}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="div-box1">id为div-box1的节点</div>
+		<div id="div-box2">id为div-box2的节点</div>
+		<div id="div-box3">id为div-box3的节点</div>
+	</div>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script>
+		$(function(){
+			/*//给获取的节点对象增加class
+			//$('节点对象').addClass('active')
+			$('#box').addClass('box');
+			$('#box #div-box1').addClass('box');
+			//移出class
+			$('#box').removeClass('box');
+			$('#box #div-box1').removeClass('box');
+			//隐藏节点对象 $('').hide()
+			// $('#box').toggleClass('box')有次class消失.没有增加
+			// $('#box').toggleClass('box');
+			$('#box').hide();
+			//显示
+			$('#box').show();
+			//显示的节点进行隐藏操作
+			//隐藏的节点进行显示操作
+			//$('').toggle();
+			$('#box').toggle();
+			$('#box').toggle();
+			//$('#box').toggle(false) == $('#box').hide();
+			//$('#box').toggle(true) == $('#box').show();
+			*/
+			//$('#box div')
+			//获取集合中第一个节点
+			$('#box div').first();
+			$('#box div:eq(0)');
+			$($('#box div')[0]);
+			//获取集合中最后一个节点
+			$('#box div').last();
+			
+			// $('#box div').first().addClass('box');
+			//获取同级别的其他节点
+			//$('').siblings()
+			//对集合中的第一个节点增加class,然后操作同级别的其他节点
+			$('#box div').first().addClass('box').siblings().last().addClass('box');
+		});
+	</script>
+</body>
+</html>

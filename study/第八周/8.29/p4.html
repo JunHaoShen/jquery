@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<ul>
+		<li>1111111</li>
+		<li>222222</li>
+		<li>33333</li>
+	</ul>
+
+	<script src="../../lib/common.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		//不冒泡,更效率
+		$('ul').on('click','li',function(e){
+			console.log('1');
+			//停掉点击事件
+			$('ul').off('click');
+
+			//无效
+			// $('ul li').off('click');
+
+		})
+		//向下冒泡
+		// $('ul li').onclick(function(e){
+
+		// });
+	</script>
+</body>
+</html>

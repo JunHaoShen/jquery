@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box">id查询
+		<div class="box">class查询</div>
+	</div>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script>
+		$(function(){
+			console.log($('#box') + +new Date());
+			console.log($('#box') + +new Date());
+			//最快的速度 以父级ID的方式
+			console.log($('#box .box') + +new Date());
+			//补充最快的方式
+			var $el = $('#box');
+			console.log($('#box')+ +new Date())
+			var $clild = $('.box',$el);
+			console.log($('.box',$el)+ +new Date())
+			//相对比id慢一级的方式
+			$('div.box')
+			console.log($('div.box')+ +new Date())
+			//最慢的
+			$('.class')
+			console.log($('.box')+ +new Date())
+
+		})
+	</script>
+</body>
+</html>

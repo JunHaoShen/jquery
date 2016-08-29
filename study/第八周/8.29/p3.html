@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.active{color:red;}
+		.hover{background-color: #454;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<span class="active">点击1</span>
+		<span>点击2</span>
+		<span>点击3</span>
+	</div>
+	<div class="container">
+		<span>显示1</span>
+		<span style="display: none">显示2</span>
+		<span style="display: none">显示3</span>
+	</div>
+
+	<script src="../../lib/common.js" type="text/javascript"></script>
+	<script>
+		$(function(){
+			$('.box span').click(function(e){
+				var $cur = $(e.currentTarget);
+				$cur.addClass('active').siblings().removeClass('active');
+				// $('.container span').eq($cur.index()).show().siblings().hide();
+				// $('.container span:eq('+$cur.index()+')').show().siblings().hide();
+				$($('.container span')[$cur.index()]).show().siblings().hide();
+			});
+			$('.box span').hover(function(e){
+				var $cur = $(e.currentTarget);
+				$cur.addClass('hover').siblings().removeClass('hover');
+			});
+		})
+		console.log($('body').width());
+	</script>
+</body>
+</html>
